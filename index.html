@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ling Yun — Personal Profile</title>
+  <meta name="description" content="Ling Yun — software engineer. Contact: email obfuscated to reduce spam." />
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#0366d6">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ling Yun — Personal Profile">
+  <meta property="og:description" content="Software engineer · Open Source Enthusiast">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="avatar.svg">
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="avatar-wrap" aria-hidden="true">
+      <img class="avatar" src="avatar.svg" alt="Ling Yun — avatar">
+    </div>
+
+    <h1 id="name">Ling Yun</h1>
+    <p class="role">Software Engineer · Open Source Enthusiast</p>
+
+    <section class="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+
+      <!-- Visible obfuscated email; clickable to reveal -->
+      <p>
+        Email:
+        <a id="email-obf" href="#" title="Click to reveal email address">[click to reveal]</a>
+      </p>
+
+      <!-- Plain mailto (commented out) -->
+      <!-- <p>Email: <a href="mailto:lingyun@example.com">lingyun@example.com</a></p> -->
+
+      <p>
+        Links:
+        <a href="https://github.com/lingyun886" rel="noopener" target="_blank">GitHub</a>
+        · <a href="#" rel="noopener" target="_blank">LinkedIn</a>
+      </p>
+    </section>
+
+    <section class="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Short bio goes here. Replace this with a few lines about yourself, your work, and what you want visitors to know.</p>
+    </section>
+
+    <footer class="foot">
+      <small>Made with ♥ · Minimal profile page</small>
+    </footer>
+  </main>
+
+  <script>
+    // Simple email de-obfuscator to make scraping harder
+    (function () {
+      var link = document.getElementById('email-obf');
+      if (!link) return;
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        // Edit these two to your actual email local-part and domain:
+        var user = 'lingyun';
+        var host = 'example.com';
+        var mail = user + '@' + host;
+        link.textContent = mail;
+        link.href = 'mailto:' + mail;
+        // optional: replace title to indicate revealed
+        link.title = 'Send email';
+      }, { once: true });
+    })();
+  </script>
+</body>
+</html>
